@@ -30,8 +30,8 @@
 
 % Manhattan distance per dimension
 for i = 1 : size(data,2)
-    x1 = data(:,i).*ones(size(data)); 
-    x2 = data(:,i)'.*ones(size(data));
+    x1 = data(:,i).*ones(size(data,1)); 
+    x2 = data(:,i)'.*ones(size(data,1));
     % Smart calculation distance
     Nom = triu(abs(x1-x2),1);
     dn = reshape(Nom,numel(Nom),1); 
@@ -61,7 +61,7 @@ for i = 1 : size(data,2)
         f2 = feval(fity,xi);
         f2 = f2./sum(f2);
         fitthingy(i,:) = f2';
-        errDist(i) = mse(f2,f');
+        errDist(i) = mseDens(f2,f');
     catch
         % For the cases where fit takes out an error
         errDist(i) = 1000; % very large distance

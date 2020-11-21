@@ -62,7 +62,7 @@ end
 
 % Sigma value to use
 if ~isfield(options,'sigma')
-    sigma = 'highDim';
+    sigma = 'highdim';
 else
     sigma = lower(options.sigma);
 end
@@ -110,7 +110,7 @@ switch simType
             % Robust approximation for High dimensional data
             case {lower('highDim')}
                 % Estimate sigma
-                sig = sigHighDim(data,numClus,100);
+                sig = sigHighDim(data);
                 
                 % Build similarity matrix
                 dd = sum(data.^2,2);
