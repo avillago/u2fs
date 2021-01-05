@@ -11,13 +11,9 @@ addpath('./datasetsSimulation');
 %% Clouds
 
 numpoints = 2000;
-data = [];
 centers = [-3 2;-4 4;-5 1];
 
-for i=1:3
-    data = [data;0.25*randn(numpoints,2)+...
-        repmat(centers(i,:),numpoints,1)];
-end
+data = clouds(numpoints, centers);
 
 simul.clouds.fea = data;
 simul.clouds.gnd = [ones(numpoints,1);2*ones(numpoints,1);3*ones(numpoints,1)];
@@ -30,15 +26,7 @@ noise = 0.5;
 ratio = 0.6;
 r2 = 35;
 
-phi2 = rand(N/2,1) * pi;
-fea = [minx + r2 * sin(phi2) - .5 * noise  + noise * rand(N/2,1) r2 * ratio * cos(phi2) - .5 * noise  + noise * rand(N/2,1) zeros(N/2,1)];
-fea2 = -1.*fea(:,1:2);
-fea2(:,1) = fea2(:,1) - 20*ones(size(fea2,1),1);
-fea2(:,2) = fea2(:,2) - 20*ones(size(fea2,1),1);
-fea2(:,3) = ones(size(fea2,1),1);
-
-fea = [fea;fea2];
-fea(:,1:2) = fea(:,1:2)+1.1*randn(size(fea,1),2);
+fea = twomoons(N, minx, noise,ratio,r2);
 
 simul.moons.fea = fea(:,1:2);
 simul.moons.gnd = fea(:,3) + ones(size(fea,1),1);
