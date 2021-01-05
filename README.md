@@ -28,3 +28,7 @@ The codes contain:
 	- **halfkernel.m**
 	- **corners.m**
 	- **crescentfullmoon.m**
+	- **clouds.m**
+	- **twomoons.m**
+
+- **exampleCode.m** : example script to run the code
