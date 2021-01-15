@@ -57,7 +57,7 @@ end
 if ~isfield(options,'simType')
     simType = lower('RBF');
 else
-    simType = lower(options.affinityType);
+    simType = lower(options.simType);
 end
 
 % Sigma value to use
