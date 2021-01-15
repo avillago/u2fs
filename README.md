@@ -31,4 +31,4 @@ The codes contain:
 	- **clouds.m**
 	- **twomoons.m**
 
-- **exampleCode.m** : example script to run the code
+- **exampleCode.m** : example script to run U2FS in the clouds dataset.
