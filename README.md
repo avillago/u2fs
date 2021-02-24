@@ -32,3 +32,6 @@ The codes contain:
 	- **twomoons.m**
 
 - **exampleCode.m** : example script to run U2FS in the clouds dataset.
+
+_________________________________________________________________________________________
+**Note**: The code requires the installation of the Curve Fitting Toolbox from Matlab.
