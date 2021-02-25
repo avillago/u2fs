@@ -69,7 +69,7 @@ for i = 1 : size(data,2)
 end
 
 % All errs set to 1000, adjuts them to maximum of other errors
-valRep = max(errDist(errDist~=1000));
+valRep = max(errDist(errDist~=1000)); % The code requires the installation of the Curve Fitting Toolbox from Matlab.
 errDist(errDist==1000) = valRep;
 % Normalize all weights so sum is 1
 ws = errDist/sum(errDist);
